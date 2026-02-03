@@ -78,6 +78,7 @@ services:
       GITHUB_EMAIL: ${GITHUB_EMAIL}
       # Optional
       OPENCLAW_BETA: ${OPENCLAW_BETA:-false}
+      OPENCLAW_GATEWAY_PASSWORD: ${OPENCLAW_GATEWAY_PASSWORD}
 
     volumes:
       - openclaw-config:/root/.openclaw
