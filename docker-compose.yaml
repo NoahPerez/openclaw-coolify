@@ -79,6 +79,9 @@ services:
       # Optional
       OPENCLAW_BETA: ${OPENCLAW_BETA:-false}
       OPENCLAW_GATEWAY_PASSWORD: ${OPENCLAW_GATEWAY_PASSWORD}
+      
+    expose:
+      - "18789"
 
     volumes:
       - openclaw-config:/root/.openclaw
