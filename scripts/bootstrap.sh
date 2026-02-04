@@ -147,8 +147,8 @@ cat >"$CONFIG_FILE" <<EOF
             "reasoning": false,
             "input": ["text"],
             "cost": { "input": 0, "output": 0 },
-            "contextWindow": 128000,
-            "maxTokens": 8192
+            "contextWindow": 16384,
+            "maxTokens": 4096
           }
         ]
       }
