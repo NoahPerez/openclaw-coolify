@@ -79,6 +79,7 @@ services:
       # Optional
       OPENCLAW_BETA: ${OPENCLAW_BETA:-false}
       OPENCLAW_GATEWAY_PASSWORD: ${OPENCLAW_GATEWAY_PASSWORD}
+      OPENCLAW_AUTH_TOKEN: ${OPENCLAW_AUTH_TOKEN}
       
     expose:
       - "24819"
