@@ -59,10 +59,10 @@ seed_agent "main" "OpenClaw"
 # ----------------------------
 # Generate Config with Prime Directive
 # ----------------------------
-if [ ! -f "$CONFIG_FILE" ]; then
-  echo "🏥 Generating openclaw.json with Prime Directive..."
-  TOKEN=${OPENCLAW_AUTH_TOKEN:-$(openssl rand -hex 24 2>/dev/null || node -e "console.log(require('crypto').randomBytes(24).toString('hex'))")}
-  cat >"$CONFIG_FILE" <<EOF
+# Always regenerate config to pick up env var changes
+echo "🏥 Generating openclaw.json with Prime Directive..."
+TOKEN=${OPENCLAW_AUTH_TOKEN:-$(openssl rand -hex 24 2>/dev/null || node -e "console.log(require('crypto').randomBytes(24).toString('hex'))")}
+cat >"$CONFIG_FILE" <<EOF
 {
 "commands": {
     "native": true,
@@ -137,7 +137,6 @@ if [ ! -f "$CONFIG_FILE" ]; then
   }
 }
 EOF
-fi
 
 # ----------------------------
 # Export state
