@@ -111,7 +111,11 @@ cat >"$CONFIG_FILE" <<EOF
       "mode": "off",
       "resetOnExit": false
     },
-    "auth": { "mode": "${GATEWAY_AUTH_MODE:-token}", "token": "$TOKEN", "password": "${OPENCLAW_GATEWAY_PASSWORD}" }
+    "auth": {
+      "mode": "${GATEWAY_AUTH_MODE:-token}",
+      "token": "$TOKEN",
+      "password": "${OPENCLAW_GATEWAY_PASSWORD}"
+    }
   },
   "agents": {
     "defaults": {
