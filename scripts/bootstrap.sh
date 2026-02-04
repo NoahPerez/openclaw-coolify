@@ -135,6 +135,22 @@ cat >"$CONFIG_FILE" <<EOF
             "maxTokens": 16384
           }
         ]
+      },
+      "ollama": {
+        "baseUrl": "${OLLAMA_BASE_URL:-http://localhost:11434}/v1",
+        "apiKey": "${OLLAMA_API_KEY:-ollama-local}",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "llama3.1:8b",
+            "name": "Llama 3.1 8B",
+            "reasoning": false,
+            "input": ["text"],
+            "cost": { "input": 0, "output": 0 },
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          }
+        ]
       }
     }
   },
