@@ -117,6 +117,27 @@ cat >"$CONFIG_FILE" <<EOF
       "password": "${OPENCLAW_GATEWAY_PASSWORD}"
     }
   },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "nvidia": {
+        "baseUrl": "https://integrate.api.nvidia.com/v1",
+        "apiKey": "${NVIDIA_API_KEY}",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "moonshotai/kimi-k2.5",
+            "name": "Moonshot Kimi K2.5 (NVIDIA)",
+            "reasoning": true,
+            "input": ["text"],
+            "cost": { "input": 0, "output": 0 },
+            "contextWindow": 16384,
+            "maxTokens": 16384
+          }
+        ]
+      }
+    }
+  },
   "agents": {
     "defaults": {
       "workspace": "$WORKSPACE_DIR",
