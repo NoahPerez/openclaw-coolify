@@ -111,7 +111,7 @@ if [ ! -f "$CONFIG_FILE" ]; then
       "mode": "off",
       "resetOnExit": false
     },
-    "auth": { "mode": "token", "token": "$TOKEN" }
+    "auth": { "mode": "${GATEWAY_AUTH_MODE:-token}", "token": "$TOKEN", "password": "${OPENCLAW_GATEWAY_PASSWORD}" }
   },
   "agents": {
     "defaults": {
