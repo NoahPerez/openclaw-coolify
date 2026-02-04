@@ -135,5 +135,5 @@ RUN ln -sf /root/.claude/bin/claude /usr/local/bin/claude || true && \
     chmod +x /app/scripts/*.sh /usr/local/bin/openclaw-approve
 
 
-EXPOSE 18789
+EXPOSE 24819
 CMD ["bash", "/app/scripts/bootstrap.sh"]

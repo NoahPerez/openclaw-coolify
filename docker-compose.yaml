@@ -21,7 +21,7 @@ services:
     environment:
       DOCKER_HOST: tcp://docker-proxy:2375
       OPENCLAW_ENABLE_WEBHOOK_PROXY: "1"
-      PORT: 18789
+      PORT: 24819
       NODE_ENV: production
       NODE_OPTIONS: '--max-old-space-size=4096'
       HOME: /root
@@ -35,7 +35,7 @@ services:
       
       # Map OpenClaw vars
       OPENCLAW_GATEWAY_BIND: lan
-      OPENCLAW_GATEWAY_PORT: ${OPENCLAW_GATEWAY_PORT:-18789}
+      OPENCLAW_GATEWAY_PORT: ${OPENCLAW_GATEWAY_PORT:-24819}
       # Tell the binary where to look for state/config
       OPENCLAW_STATE_DIR: /root/.openclaw
       OPENCLAW_WORKSPACE: /root/openclaw-workspace
@@ -56,7 +56,7 @@ services:
       NANOBANANA_API_KEY: ${NANOBANANA_API_KEY}
       ELEVENLABS_API_KEY: ${ELEVENLABS_API_KEY}
 
-      SERVICE_URL_OPENCLAW_18789: null
+      SERVICE_URL_OPENCLAW_24819: null
       SERVICE_URL_OPENCLAWWEBHOOK_8788: null
       BASE_URL: 'https://${SERVICE_FQDN_OPENCLAW}'
       PUBLIC_URL: 'https://${SERVICE_FQDN_OPENCLAW}'
@@ -81,7 +81,7 @@ services:
       OPENCLAW_GATEWAY_PASSWORD: ${OPENCLAW_GATEWAY_PASSWORD}
       
     expose:
-      - "18789"
+      - "24819"
 
     volumes:
       - openclaw-config:/root/.openclaw
@@ -96,7 +96,7 @@ services:
 
     command: ["bash", "/app/scripts/bootstrap.sh"]
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:18789/"]
+      test: ["CMD", "curl", "-f", "http://localhost:24819/"]
       interval: 30s
       timeout: 10s
       retries: 3
